@@ -1,6 +1,20 @@
+--- INNER JOIN
+SELECT left.id as match_id,
+left.field as data1,
+right.field as data2,
+FROM left_table AS left
+INNER JOIN right_table as right
+USING (id);
+
+--- BASIC EXAMPLE
 SELECT c.code AS country_code, c.name, e.year, e.inflation_rate
 FROM countries AS c
   -- Join to economies (alias e)
   INNER JOIN economies as e
     -- Match on code
     ON e.code = c.code;
+ 
+    -- Or we can use
+    USING (code);
+
+

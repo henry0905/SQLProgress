@@ -1,0 +1,6 @@
+SELECT c.code AS country_code, c.name, e.year, e.inflation_rate
+FROM countries AS c
+  -- Join to economies (alias e)
+  INNER JOIN economies as e
+    -- Match on code
+    ON e.code = c.code;
